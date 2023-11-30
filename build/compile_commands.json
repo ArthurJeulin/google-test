@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/ssd/dev/google-test/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -g -std=gnu++2a -fPIC -o CMakeFiles/lib-for-test.dir/src/mylib.cpp.o -c /ssd/dev/google-test/src/mylib.cpp",
+  "file": "/ssd/dev/google-test/src/mylib.cpp",
+  "output": "CMakeFiles/lib-for-test.dir/src/mylib.cpp.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -g -std=gnu++2a -fPIE -o CMakeFiles/learn-google-test.dir/src/main.cpp.o -c /ssd/dev/google-test/src/main.cpp",
+  "file": "/ssd/dev/google-test/src/main.cpp",
+  "output": "CMakeFiles/learn-google-test.dir/src/main.cpp.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/test",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /usr/src/gtest/include -isystem /usr/src/gtest -g -std=gnu++2a -fPIE -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/Exempletest.dir/example-test.cpp.o -c /ssd/dev/google-test/test/example-test.cpp",
+  "file": "/ssd/dev/google-test/test/example-test.cpp",
+  "output": "test/CMakeFiles/Exempletest.dir/example-test.cpp.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/gtest",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -I/usr/src/gtest/include -I/usr/src/gtest -g -std=gnu++2a -fPIC -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/gtest/src/gtest-all.cc",
+  "file": "/usr/src/gtest/src/gtest-all.cc",
+  "output": "gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/gtest",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /usr/src/gtest/include -isystem /usr/src/gtest -g -std=gnu++2a -fPIC -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/gtest/src/gtest_main.cc",
+  "file": "/usr/src/gtest/src/gtest_main.cc",
+  "output": "gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-g++-10 -g "CMakeFiles/learn-google-test.dir/src/main.cpp.o" -o learn-google-test  liblib-for-test.a 

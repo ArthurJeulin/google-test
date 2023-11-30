@@ -1,0 +1,2 @@
+/usr/bin/aarch64-linux-gnu-ar qc liblib-for-test.a "CMakeFiles/lib-for-test.dir/src/mylib.cpp.o"
+/usr/bin/aarch64-linux-gnu-ranlib liblib-for-test.a

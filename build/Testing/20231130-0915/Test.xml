@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20231130-0915-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.27.5"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="bernard"
+	OSRelease="5.10.120-tegra"
+	OSVersion="#1 SMP PREEMPT Tue Aug 1 12:32:50 PDT 2023"
+	OSPlatform="aarch64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="8"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="1"
+	TotalVirtualMemory="31400"
+	TotalPhysicalMemory="62800"
+	LogicalProcessorsPerPhysical="12"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Nov 30 10:49 CET</StartDateTime>
+		<StartTestTime>1701337778</StartTestTime>
+		<TestList>
+			<Test>./test/Exempletest</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>Exempletest</Name>
+			<Path>./test</Path>
+			<FullName>./test/Exempletest</FullName>
+			<FullCommandLine>/ssd/dev/google-test/build/test/Exempletest</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00333661</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/ssd/dev/google-test/build/test/Exempletest</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNkD8PgjAQxfd+ihtloKi7g4nEwUQNxIkQU7ESEnrF/lE/vkAJioaEm9q+19/dvcgiFpiDYAXOPLgpKSCwWgVaZUFuuDaf07kx0SwjyaqvFKKOsITGox1i0V5A28JwShK/rxS2pbyw0ukcH4WSKDjWXm58W/2YB9DwxURV8uaFJBCd9tBW+i1Qwer5nACH3b8IszkI7Y0D9N0yxccZTu8xU6Z1ZjDSsNIj0+IwnCn/Kp84THs0ZVAM6bBRvcJxHcfhplmx+0jJG401mr8=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Nov 30 10:49 CET</EndDateTime>
+		<EndTestTime>1701337778</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

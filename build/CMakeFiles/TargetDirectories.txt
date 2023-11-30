@@ -1,0 +1,14 @@
+/ssd/dev/google-test/build/CMakeFiles/lib-for-test.dir
+/ssd/dev/google-test/build/CMakeFiles/learn-google-test.dir
+/ssd/dev/google-test/build/CMakeFiles/test.dir
+/ssd/dev/google-test/build/CMakeFiles/edit_cache.dir
+/ssd/dev/google-test/build/CMakeFiles/rebuild_cache.dir
+/ssd/dev/google-test/build/test/CMakeFiles/Exempletest.dir
+/ssd/dev/google-test/build/test/CMakeFiles/test.dir
+/ssd/dev/google-test/build/test/CMakeFiles/edit_cache.dir
+/ssd/dev/google-test/build/test/CMakeFiles/rebuild_cache.dir
+/ssd/dev/google-test/build/gtest/CMakeFiles/gtest.dir
+/ssd/dev/google-test/build/gtest/CMakeFiles/gtest_main.dir
+/ssd/dev/google-test/build/gtest/CMakeFiles/test.dir
+/ssd/dev/google-test/build/gtest/CMakeFiles/edit_cache.dir
+/ssd/dev/google-test/build/gtest/CMakeFiles/rebuild_cache.dir
