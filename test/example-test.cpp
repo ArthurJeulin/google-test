@@ -2,11 +2,17 @@
 #include "mylib.hpp"
 
 //to debug side_effect
-int side_effect = 42;
-bool function_to_test()
-{
-    side_effect = 16;
-    return false;
+namespace{
+    int side_effect = 42;
+    bool function_to_test()
+    {
+        side_effect = 16;
+        return false;
+    }
+    int GetMeaningOfLife(){
+        return 42;
+    }
+    
 }
 
 struct ExampleTests
@@ -68,4 +74,10 @@ TEST(Exampletest, square)
         expected_square,
         square(x)
     );
+}
+TEST(TestTopic, TrivialEquality){
+    EXPECT_EQ(GetMeaningOfLife,42); 
+};
+TEST(TestTopic, MoreEqualityTests){
+    ASSERT_EQ(GetMeaningOfLife(),0) << "Oh no, a mistake!";
 }
