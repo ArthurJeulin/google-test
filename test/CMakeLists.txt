@@ -1,33 +1,10 @@
+# **********************************************************
+#      2023 : Arthur JEULIN
+#      google-test : 
+#      Created by Arthur JEULIN on 12/14/2023.
+# **********************************************************
 cmake_minimum_required(VERSION 3.27.5)
-#Add gtest sources folder. Provides gtest, gtest_main
-add_subdirectory(/usr/src/gtest 
-                ${PROJECT_BINARY_DIR}/gtest)
 
 
-set(this Exempletest)
-
-#include(CTest) # Include testing cmake package
-# Set binary name for convinience.
-# set(TEST_BINARY ${PROJECT_NAME} _test)
-# #This an executable that runs the tests.
-add_executable(${this} example-test.cpp)
-
-#Link the executable to needed libraries
-target_link_libraries(${this} PUBLIC
-        gtest gtest_main    # GTest Libraries
-        lib-for-test              # Library we are testing
-)
-#Add gtest to be able ro run gtest
-
-# add_test(
-#     NAME ${this}
-#     COMMAND ${this}
-# )
-
-add_test(${this} Exempletest)
-
-if(CMAKE_TESTING)
-        add_executable(my_test example-test.cpp)
-        target_link_libraries(my_test PRIVATE GTest::gtest_main)
-        include(GoogleTest)
-        gtest_discover_tests(my_test)
+add_subdirectory(units)
+add_subdirectory(integration)

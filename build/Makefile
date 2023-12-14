@@ -95,6 +95,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles /ssd/dev/google-test/build//CMakeFiles/progress.marks
@@ -127,43 +172,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lib-for-test
+# Target rules for targets named gmock
 
 # Build rule for target.
-lib-for-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib-for-test
-.PHONY : lib-for-test
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
 # fast build rule for target.
-lib-for-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/build
-.PHONY : lib-for-test/fast
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
 #=============================================================================
-# Target rules for targets named learn-google-test
+# Target rules for targets named gmock_main
 
 # Build rule for target.
-learn-google-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 learn-google-test
-.PHONY : learn-google-test
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
 # fast build rule for target.
-learn-google-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/build
-.PHONY : learn-google-test/fast
-
-#=============================================================================
-# Target rules for targets named Exempletest
-
-# Build rule for target.
-Exempletest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Exempletest
-.PHONY : Exempletest
-
-# fast build rule for target.
-Exempletest/fast:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Exempletest.dir/build.make test/CMakeFiles/Exempletest.dir/build
-.PHONY : Exempletest/fast
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
 #=============================================================================
 # Target rules for targets named gtest
@@ -175,7 +207,7 @@ gtest: cmake_check_build_system
 
 # fast build rule for target.
 gtest/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
 #=============================================================================
@@ -188,56 +220,47 @@ gtest_main: cmake_check_build_system
 
 # fast build rule for target.
 gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+#=============================================================================
+# Target rules for targets named lib-for-test
 
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+# Build rule for target.
+lib-for-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib-for-test
+.PHONY : lib-for-test
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+# fast build rule for target.
+lib-for-test/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lib-for-test.dir/build.make src/CMakeFiles/lib-for-test.dir/build
+.PHONY : lib-for-test/fast
 
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+#=============================================================================
+# Target rules for targets named learn-google-test
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+# Build rule for target.
+learn-google-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 learn-google-test
+.PHONY : learn-google-test
 
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+# fast build rule for target.
+learn-google-test/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/learn-google-test.dir/build.make src/CMakeFiles/learn-google-test.dir/build
+.PHONY : learn-google-test/fast
 
-src/mylib.o: src/mylib.cpp.o
-.PHONY : src/mylib.o
+#=============================================================================
+# Target rules for targets named example_test
 
-# target to build an object file
-src/mylib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/src/mylib.cpp.o
-.PHONY : src/mylib.cpp.o
+# Build rule for target.
+example_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example_test
+.PHONY : example_test
 
-src/mylib.i: src/mylib.cpp.i
-.PHONY : src/mylib.i
-
-# target to preprocess a source file
-src/mylib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/src/mylib.cpp.i
-.PHONY : src/mylib.cpp.i
-
-src/mylib.s: src/mylib.cpp.s
-.PHONY : src/mylib.s
-
-# target to generate assembly for a file
-src/mylib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/src/mylib.cpp.s
-.PHONY : src/mylib.cpp.s
+# fast build rule for target.
+example_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/units/CMakeFiles/example_test.dir/build.make test/units/CMakeFiles/example_test.dir/build
+.PHONY : example_test/fast
 
 # Help Target
 help:
@@ -246,19 +269,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... Exempletest"
+	@echo "... example_test"
+	@echo "... gmock"
+	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... learn-google-test"
 	@echo "... lib-for-test"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/mylib.o"
-	@echo "... src/mylib.i"
-	@echo "... src/mylib.s"
 .PHONY : help
 
 

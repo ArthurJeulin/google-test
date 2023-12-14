@@ -1,32 +1,44 @@
 [
 {
-  "directory": "/ssd/dev/google-test/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -g -std=gnu++2a -fPIC -o CMakeFiles/lib-for-test.dir/src/mylib.cpp.o -c /ssd/dev/google-test/src/mylib.cpp",
+  "directory": "/ssd/dev/google-test/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -I/ssd/dev/google-test/build/_deps/googletest-src/googlemock/include -I/ssd/dev/google-test/build/_deps/googletest-src/googlemock -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest -g -std=c++2a -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /ssd/dev/google-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/ssd/dev/google-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googlemock/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googlemock -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest -g -std=c++2a -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /ssd/dev/google-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/ssd/dev/google-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -I/ssd/dev/google-test/build/_deps/googletest-src/googletest/include -I/ssd/dev/google-test/build/_deps/googletest-src/googletest -g -std=c++2a -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /ssd/dev/google-test/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/ssd/dev/google-test/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest -g -std=c++2a -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /ssd/dev/google-test/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/ssd/dev/google-test/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/ssd/dev/google-test/build/src",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -g -std=gnu++2a -o CMakeFiles/lib-for-test.dir/mylib.cpp.o -c /ssd/dev/google-test/src/mylib.cpp",
   "file": "/ssd/dev/google-test/src/mylib.cpp",
-  "output": "CMakeFiles/lib-for-test.dir/src/mylib.cpp.o"
+  "output": "src/CMakeFiles/lib-for-test.dir/mylib.cpp.o"
 },
 {
-  "directory": "/ssd/dev/google-test/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -g -std=gnu++2a -fPIE -o CMakeFiles/learn-google-test.dir/src/main.cpp.o -c /ssd/dev/google-test/src/main.cpp",
+  "directory": "/ssd/dev/google-test/build/src",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -g -std=gnu++2a -o CMakeFiles/learn-google-test.dir/main.cpp.o -c /ssd/dev/google-test/src/main.cpp",
   "file": "/ssd/dev/google-test/src/main.cpp",
-  "output": "CMakeFiles/learn-google-test.dir/src/main.cpp.o"
+  "output": "src/CMakeFiles/learn-google-test.dir/main.cpp.o"
 },
 {
-  "directory": "/ssd/dev/google-test/build/test",
-  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /usr/src/gtest/include -isystem /usr/src/gtest -g -std=gnu++2a -fPIE -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/Exempletest.dir/example-test.cpp.o -c /ssd/dev/google-test/test/example-test.cpp",
-  "file": "/ssd/dev/google-test/test/example-test.cpp",
-  "output": "test/CMakeFiles/Exempletest.dir/example-test.cpp.o"
-},
-{
-  "directory": "/ssd/dev/google-test/build/gtest",
-  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -I/usr/src/gtest/include -I/usr/src/gtest -g -std=gnu++2a -fPIC -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/gtest/src/gtest-all.cc",
-  "file": "/usr/src/gtest/src/gtest-all.cc",
-  "output": "gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-},
-{
-  "directory": "/ssd/dev/google-test/build/gtest",
-  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /usr/src/gtest/include -isystem /usr/src/gtest -g -std=gnu++2a -fPIC -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/gtest/src/gtest_main.cc",
-  "file": "/usr/src/gtest/src/gtest_main.cc",
-  "output": "gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+  "directory": "/ssd/dev/google-test/build/test/units",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10  -I/ssd/dev/google-test/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest/include -isystem /ssd/dev/google-test/build/_deps/googletest-src/googletest -g -std=gnu++2a -o CMakeFiles/example_test.dir/example_test.cpp.o -c /ssd/dev/google-test/test/units/example_test.cpp",
+  "file": "/ssd/dev/google-test/test/units/example_test.cpp",
+  "output": "test/units/CMakeFiles/example_test.dir/example_test.cpp.o"
 }
 ]

@@ -44,6 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/ssd/dev/google-test/build/gtest/cmake_install.cmake")
+  include("/ssd/dev/google-test/build/test/units/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/ssd/dev/google-test/build/test/integration/cmake_install.cmake")
 endif()
 

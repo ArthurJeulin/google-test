@@ -63,186 +63,323 @@ CMAKE_BINARY_DIR = /ssd/dev/google-test/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/lib-for-test.dir/all
-all: CMakeFiles/learn-google-test.dir/all
+all: _deps/googletest-build/all
+all: src/all
 all: test/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: _deps/googletest-build/preinstall
+preinstall: src/preinstall
 preinstall: test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/lib-for-test.dir/clean
-clean: CMakeFiles/learn-google-test.dir/clean
+clean: _deps/googletest-build/clean
+clean: src/clean
 clean: test/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory gtest
+# Directory level rules for directory _deps/googletest-build
 
 # Recursive "all" directory target.
-gtest/all: gtest/CMakeFiles/gtest.dir/all
-gtest/all: gtest/CMakeFiles/gtest_main.dir/all
-.PHONY : gtest/all
+_deps/googletest-build/all: _deps/googletest-build/googlemock/all
+.PHONY : _deps/googletest-build/all
 
 # Recursive "preinstall" directory target.
-gtest/preinstall:
-.PHONY : gtest/preinstall
+_deps/googletest-build/preinstall: _deps/googletest-build/googlemock/preinstall
+.PHONY : _deps/googletest-build/preinstall
 
 # Recursive "clean" directory target.
-gtest/clean: gtest/CMakeFiles/gtest.dir/clean
-gtest/clean: gtest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/clean
+_deps/googletest-build/clean: _deps/googletest-build/googlemock/clean
+.PHONY : _deps/googletest-build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/googletest-build/googlemock
+
+# Recursive "all" directory target.
+_deps/googletest-build/googlemock/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+_deps/googletest-build/googlemock/all: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+_deps/googletest-build/googlemock/all: _deps/googletest-build/googletest/all
+.PHONY : _deps/googletest-build/googlemock/all
+
+# Recursive "preinstall" directory target.
+_deps/googletest-build/googlemock/preinstall: _deps/googletest-build/googletest/preinstall
+.PHONY : _deps/googletest-build/googlemock/preinstall
+
+# Recursive "clean" directory target.
+_deps/googletest-build/googlemock/clean: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+_deps/googletest-build/googlemock/clean: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+_deps/googletest-build/googlemock/clean: _deps/googletest-build/googletest/clean
+.PHONY : _deps/googletest-build/googlemock/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/googletest-build/googletest
+
+# Recursive "all" directory target.
+_deps/googletest-build/googletest/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+_deps/googletest-build/googletest/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+.PHONY : _deps/googletest-build/googletest/all
+
+# Recursive "preinstall" directory target.
+_deps/googletest-build/googletest/preinstall:
+.PHONY : _deps/googletest-build/googletest/preinstall
+
+# Recursive "clean" directory target.
+_deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
+_deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : _deps/googletest-build/googletest/clean
+
+#=============================================================================
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/lib-for-test.dir/all
+src/all: src/CMakeFiles/learn-google-test.dir/all
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/lib-for-test.dir/clean
+src/clean: src/CMakeFiles/learn-google-test.dir/clean
+.PHONY : src/clean
 
 #=============================================================================
 # Directory level rules for directory test
 
 # Recursive "all" directory target.
-test/all: test/CMakeFiles/Exempletest.dir/all
-test/all: gtest/all
+test/all: test/units/all
+test/all: test/integration/all
 .PHONY : test/all
 
 # Recursive "preinstall" directory target.
-test/preinstall: gtest/preinstall
+test/preinstall: test/units/preinstall
+test/preinstall: test/integration/preinstall
 .PHONY : test/preinstall
 
 # Recursive "clean" directory target.
-test/clean: test/CMakeFiles/Exempletest.dir/clean
-test/clean: gtest/clean
+test/clean: test/units/clean
+test/clean: test/integration/clean
 .PHONY : test/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/lib-for-test.dir
+# Directory level rules for directory test/integration
 
-# All Build rule for target.
-CMakeFiles/lib-for-test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=9,10 "Built target lib-for-test"
-.PHONY : CMakeFiles/lib-for-test.dir/all
+# Recursive "all" directory target.
+test/integration/all:
+.PHONY : test/integration/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/lib-for-test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lib-for-test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
-.PHONY : CMakeFiles/lib-for-test.dir/rule
+# Recursive "preinstall" directory target.
+test/integration/preinstall:
+.PHONY : test/integration/preinstall
 
-# Convenience name for target.
-lib-for-test: CMakeFiles/lib-for-test.dir/rule
-.PHONY : lib-for-test
-
-# clean rule for target.
-CMakeFiles/lib-for-test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib-for-test.dir/build.make CMakeFiles/lib-for-test.dir/clean
-.PHONY : CMakeFiles/lib-for-test.dir/clean
+# Recursive "clean" directory target.
+test/integration/clean:
+.PHONY : test/integration/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/learn-google-test.dir
+# Directory level rules for directory test/units
+
+# Recursive "all" directory target.
+test/units/all: test/units/CMakeFiles/example_test.dir/all
+.PHONY : test/units/all
+
+# Recursive "preinstall" directory target.
+test/units/preinstall:
+.PHONY : test/units/preinstall
+
+# Recursive "clean" directory target.
+test/units/clean: test/units/CMakeFiles/example_test.dir/clean
+.PHONY : test/units/clean
+
+#=============================================================================
+# Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
 
 # All Build rule for target.
-CMakeFiles/learn-google-test.dir/all: CMakeFiles/lib-for-test.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=7,8 "Built target learn-google-test"
-.PHONY : CMakeFiles/learn-google-test.dir/all
+_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=3,4 "Built target gmock"
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/learn-google-test.dir/rule: cmake_check_build_system
+_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/learn-google-test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
-.PHONY : CMakeFiles/learn-google-test.dir/rule
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
-learn-google-test: CMakeFiles/learn-google-test.dir/rule
-.PHONY : learn-google-test
+gmock: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
+.PHONY : gmock
 
 # clean rule for target.
-CMakeFiles/learn-google-test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn-google-test.dir/build.make CMakeFiles/learn-google-test.dir/clean
-.PHONY : CMakeFiles/learn-google-test.dir/clean
+_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
 
 #=============================================================================
-# Target rules for target test/CMakeFiles/Exempletest.dir
+# Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-test/CMakeFiles/Exempletest.dir/all: CMakeFiles/lib-for-test.dir/all
-test/CMakeFiles/Exempletest.dir/all: gtest/CMakeFiles/gtest.dir/all
-test/CMakeFiles/Exempletest.dir/all: gtest/CMakeFiles/gtest_main.dir/all
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Exempletest.dir/build.make test/CMakeFiles/Exempletest.dir/depend
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Exempletest.dir/build.make test/CMakeFiles/Exempletest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=1,2 "Built target Exempletest"
-.PHONY : test/CMakeFiles/Exempletest.dir/all
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=5,6 "Built target gmock_main"
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
-test/CMakeFiles/Exempletest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/Exempletest.dir/all
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/Exempletest.dir/rule
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
-Exempletest: test/CMakeFiles/Exempletest.dir/rule
-.PHONY : Exempletest
+gmock_main: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
+.PHONY : gmock_main
 
 # clean rule for target.
-test/CMakeFiles/Exempletest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Exempletest.dir/build.make test/CMakeFiles/Exempletest.dir/clean
-.PHONY : test/CMakeFiles/Exempletest.dir/clean
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
 
 #=============================================================================
-# Target rules for target gtest/CMakeFiles/gtest.dir
+# Target rules for target _deps/googletest-build/googletest/CMakeFiles/gtest.dir
 
 # All Build rule for target.
-gtest/CMakeFiles/gtest.dir/all:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=3,4 "Built target gtest"
-.PHONY : gtest/CMakeFiles/gtest.dir/all
+_deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=7,8 "Built target gtest"
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
-gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+_deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gtest.dir/rule
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
-gtest: gtest/CMakeFiles/gtest.dir/rule
+gtest: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
 .PHONY : gtest
 
 # clean rule for target.
-gtest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/clean
-.PHONY : gtest/CMakeFiles/gtest.dir/clean
+_deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target gtest/CMakeFiles/gtest_main.dir
+# Target rules for target _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
 
 # All Build rule for target.
-gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=5,6 "Built target gtest_main"
-.PHONY : gtest/CMakeFiles/gtest_main.dir/all
+_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=9,10 "Built target gtest_main"
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
-gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gtest_main.dir/rule
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
-gtest_main: gtest/CMakeFiles/gtest_main.dir/rule
+gtest_main: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
 .PHONY : gtest_main
 
 # clean rule for target.
-gtest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/CMakeFiles/gtest_main.dir/clean
+_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/lib-for-test.dir
+
+# All Build rule for target.
+src/CMakeFiles/lib-for-test.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lib-for-test.dir/build.make src/CMakeFiles/lib-for-test.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lib-for-test.dir/build.make src/CMakeFiles/lib-for-test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=13,14 "Built target lib-for-test"
+.PHONY : src/CMakeFiles/lib-for-test.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/lib-for-test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/lib-for-test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/lib-for-test.dir/rule
+
+# Convenience name for target.
+lib-for-test: src/CMakeFiles/lib-for-test.dir/rule
+.PHONY : lib-for-test
+
+# clean rule for target.
+src/CMakeFiles/lib-for-test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lib-for-test.dir/build.make src/CMakeFiles/lib-for-test.dir/clean
+.PHONY : src/CMakeFiles/lib-for-test.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/learn-google-test.dir
+
+# All Build rule for target.
+src/CMakeFiles/learn-google-test.dir/all: src/CMakeFiles/lib-for-test.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/learn-google-test.dir/build.make src/CMakeFiles/learn-google-test.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/learn-google-test.dir/build.make src/CMakeFiles/learn-google-test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=11,12 "Built target learn-google-test"
+.PHONY : src/CMakeFiles/learn-google-test.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/learn-google-test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/learn-google-test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/learn-google-test.dir/rule
+
+# Convenience name for target.
+learn-google-test: src/CMakeFiles/learn-google-test.dir/rule
+.PHONY : learn-google-test
+
+# clean rule for target.
+src/CMakeFiles/learn-google-test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/learn-google-test.dir/build.make src/CMakeFiles/learn-google-test.dir/clean
+.PHONY : src/CMakeFiles/learn-google-test.dir/clean
+
+#=============================================================================
+# Target rules for target test/units/CMakeFiles/example_test.dir
+
+# All Build rule for target.
+test/units/CMakeFiles/example_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+test/units/CMakeFiles/example_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+test/units/CMakeFiles/example_test.dir/all: src/CMakeFiles/lib-for-test.dir/all
+	$(MAKE) $(MAKESILENT) -f test/units/CMakeFiles/example_test.dir/build.make test/units/CMakeFiles/example_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/units/CMakeFiles/example_test.dir/build.make test/units/CMakeFiles/example_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/ssd/dev/google-test/build/CMakeFiles --progress-num=1,2 "Built target example_test"
+.PHONY : test/units/CMakeFiles/example_test.dir/all
+
+# Build rule for subdir invocation for target.
+test/units/CMakeFiles/example_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/units/CMakeFiles/example_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /ssd/dev/google-test/build/CMakeFiles 0
+.PHONY : test/units/CMakeFiles/example_test.dir/rule
+
+# Convenience name for target.
+example_test: test/units/CMakeFiles/example_test.dir/rule
+.PHONY : example_test
+
+# clean rule for target.
+test/units/CMakeFiles/example_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/units/CMakeFiles/example_test.dir/build.make test/units/CMakeFiles/example_test.dir/clean
+.PHONY : test/units/CMakeFiles/example_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
